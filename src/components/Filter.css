@@ -1,0 +1,27 @@
+.filter {
+  display: flex;
+  flex: .2;
+  align-items: center;
+  justify-content: center;
+  
+  position: relative;
+  display: inline-block;
+}
+
+.filter__list {
+  list-style: none;
+  padding: 0 30px;
+  width: 200px;
+  border: 0;
+  border-radius: 4px;
+  position: absolute;
+  
+}
+
+.filter__btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    padding: 20px 30px;
+}
