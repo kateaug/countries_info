@@ -9,9 +9,6 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 35px;
-
-    background-color: lightseagreen;
-
 }
 
 .countries__grid {

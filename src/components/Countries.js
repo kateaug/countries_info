@@ -43,7 +43,7 @@ const Countries = () => {
           });
        
     }
-    
+
   
     const updateInput = async (input) => {
         const filtered = defaultCountriesData.filter(country => {
