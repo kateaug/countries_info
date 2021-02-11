@@ -1,11 +1,10 @@
 import React from 'react';
-import './Countries.css';
 import { useEffect, useState } from 'react';
-import Country from './Country';
-import Search from './Search';
-import Filter from './Filter';
-import {Link} from 'react-router-dom';
-import CountryDetail from './CountryDetail';
+import Country from '../Country/Country';
+import Search from '../Search/Search';
+import Filter from '../Filter/Filter';
+import { Link } from 'react-router-dom';
+import { Container, Options, Grid } from './styles';
 
 const Countries = () => {
 
@@ -25,7 +24,6 @@ const Countries = () => {
     };
 
     useEffect(() => {
-
         fetchCountries();
 
     }, []);
@@ -56,7 +54,7 @@ const Countries = () => {
      
     };
 
-    const card = <div className="countries__grid">
+    const card = <Grid>
                         {!countriesData ? (
                                 <div>Error</div>
                             ) : (countriesData.map((data, index ) => (
@@ -70,21 +68,16 @@ const Countries = () => {
                                     />
                                 
                         )))}
-                </div>; 
+                </Grid>; 
 
     return (
-        <div className="countries">
-            <div className="countries__options">
-               
+        <Container>
+            <Options>          
                 <Search input={input} onChange={updateInput} /> 
                 <Filter filterByRegion={loadCountriesByRegion} />
-            </div>
-            {/* <Link component={CountryDetail} to={'/detail'} style={{ textDecoration: 'none' }}>{card}</Link> */}
-
-            <Link to="/detail" style={{ textDecoration: 'none' }}>{card}</Link>
-
-               
-        </div>
+            </Options> 
+            <Link to='/detail' style={{ textDecoration: 'none' }}>{card}</Link>      
+        </Container>
     );
 };
 

@@ -1,32 +1,44 @@
-import './App.css';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route
-} from "react-router-dom";
-import Header from './components/Header';
-import Countries from './components/Countries';
+} from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyles } from './global';
+import { light, dark } from './themes';
+import Header from './components/Header/Header';
+import Countries from './components/Countries/Countries';
 import CountryDetail from './components/CountryDetail';
 
 
 function App() {
 
+  const stored = localStorage.getItem('isDarkMode');
+  const [isDarkMode, setIsDarkMode] = useState(
+    stored === 'true' ? true : false
+  );
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    localStorage.setItem('isDarkMode', !isDarkMode);
+  };
 
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route exact path="/">
-            <Header />
-            <Countries />
-          </Route>
-          <Route path="/detail">
-            <Header />
-            <CountryDetail />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+      <ThemeProvider theme={isDarkMode ? dark : light}>
+          <GlobalStyles />
+          <Router>
+          <Header toggleThemes={toggleTheme}/> 
+              <Switch>
+                  <Route exact path='/'>        
+                      <Countries />
+                  </Route>
+                  <Route path='/detail'>               
+                      <CountryDetail />
+                  </Route>
+              </Switch>
+          </Router>
+      </ThemeProvider>
   );
 }
 
