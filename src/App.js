@@ -9,7 +9,7 @@ import { GlobalStyles } from './global';
 import { light, dark } from './themes';
 import Header from './components/Header/Header';
 import Countries from './components/Countries/Countries';
-import CountryDetail from './components/CountryDetail';
+import CountryDetail from './components/CountryDetail/CountryDetail';
 
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
                   <Route exact path='/'>        
                       <Countries />
                   </Route>
-                  <Route path='/detail'>               
+                  <Route path='/:name'>               
                       <CountryDetail />
                   </Route>
               </Switch>

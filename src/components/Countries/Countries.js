@@ -3,14 +3,16 @@ import { useEffect, useState } from 'react';
 import Country from '../Country/Country';
 import Search from '../Search/Search';
 import Filter from '../Filter/Filter';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Container, Options, Grid } from './styles';
+import CountryDetail from '../CountryDetail/CountryDetail';
 
 const Countries = () => {
 
     const [input, setInput] = useState('');
     const [countriesData, setCountriesData] = useState([]);
     const [defaultCountriesData, setDefaultCountriesData] = useState([]);
+    const history = useHistory();
 
 
     const fetchCountries = async () => {
@@ -19,7 +21,6 @@ const Countries = () => {
           .then(data => {
             setCountriesData(data);
             setDefaultCountriesData(data);
-            //console.log('DATA >>>>>>', data[0].region);
           })            
     };
 
@@ -37,7 +38,6 @@ const Countries = () => {
           .then(res => res.json())
           .then(data => {
             setCountriesData(data);
-              console.log('FILTER >>>>>', data);
           });
        
     }
@@ -56,9 +56,18 @@ const Countries = () => {
 
     const card = <Grid>
                         {!countriesData ? (
-                                <div>Error</div>
-                            ) : (countriesData.map((data, index ) => (
+                                <div>Something went wrong... Try again!</div>
+                            ) : (countriesData.map((data, index, name ) => (
+                            <Link 
+                                to={`/${data.name.toLowerCase()}`} 
+                                key={data.name}
+                                style={{ textDecoration: 'none' }}>    
                                     <Country
+                                        onClick={() =>
+                                            history.push({
+                                              pathname: `/:${name}`
+                                            })
+                                        }
                                         key={index}
                                         flag={data.flag}
                                         name={data.name}
@@ -66,6 +75,7 @@ const Countries = () => {
                                         capital={data.capital}
                                         population={data.population}
                                     />
+                             </Link>   
                                 
                         )))}
                 </Grid>; 
@@ -76,7 +86,7 @@ const Countries = () => {
                 <Search input={input} onChange={updateInput} /> 
                 <Filter filterByRegion={loadCountriesByRegion} />
             </Options> 
-            <Link to='/detail' style={{ textDecoration: 'none' }}>{card}</Link>      
+               {card}
         </Container>
     );
 };

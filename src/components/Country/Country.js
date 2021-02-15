@@ -6,7 +6,7 @@ const Country = ({ flag, alt, name, population, region, capital }) => {
 
     return (
         <Container>
-            <img src={flag} className="country__flag" alt={alt} />
+            <img src={flag} className="country__flag" alt={alt} />   
             <Details>
                 <h3>{name}</h3>
                 <span><strong>Population:</strong>{population}</span>

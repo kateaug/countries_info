@@ -11,8 +11,9 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.text};
 
     img {
-        width: 250px;
-        object-fit: contain;
+        width: 100%;
+        height: 147px;
+        object-fit: cover;
     }
 
 `;
@@ -21,5 +22,17 @@ export const Details = styled.div`
     display: flex;
     flex-direction: column;
     padding: 15px;
+
+    h3 {
+        padding 7px 0;
+    }
+
+    span {
+        margin: 2px 0;
+    }
+
+    strong {
+        margin-right: 5px;
+    }
 `;
  

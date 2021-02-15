@@ -14,7 +14,6 @@ export const Container = styled.div`
         align-items: center;
         background-color: #fff;
         border: 1px solid #ccc;
-        border-radius: 5px;
         overflow: hidden;
         outline: none;
         cursor: pointer;
