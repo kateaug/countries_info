@@ -5,13 +5,14 @@ import Search from '../Search/Search';
 import Filter from '../Filter/Filter';
 import { Link, useHistory } from 'react-router-dom';
 import { Container, Options, Grid } from './styles';
-import CountryDetail from '../CountryDetail/CountryDetail';
+import Spinner from '../Spinner/Spinner';
 
 const Countries = () => {
 
     const [input, setInput] = useState('');
     const [countriesData, setCountriesData] = useState([]);
     const [defaultCountriesData, setDefaultCountriesData] = useState([]);
+    const [loading, setLoading] = useState(true);
     const history = useHistory();
 
 
@@ -19,6 +20,7 @@ const Countries = () => {
         return await fetch('https://restcountries.eu/rest/v2/all')
           .then(res => res.json())
           .then(data => {
+            setLoading(false);  
             setCountriesData(data);
             setDefaultCountriesData(data);
           })            
@@ -86,7 +88,7 @@ const Countries = () => {
                 <Search input={input} onChange={updateInput} /> 
                 <Filter filterByRegion={loadCountriesByRegion} />
             </Options> 
-               {card}
+             { loading ? <Spinner /> : card }            
         </Container>
     );
 };
