@@ -23,6 +23,7 @@ const Countries = () => {
             setLoading(false);  
             setCountriesData(data);
             setDefaultCountriesData(data);
+            setInput('');
           })            
     };
 
@@ -40,8 +41,8 @@ const Countries = () => {
           .then(res => res.json())
           .then(data => {
             setCountriesData(data);
-          });
-       
+            setInput('');
+          });       
     }
 
   
@@ -51,9 +52,13 @@ const Countries = () => {
         })
         
         setInput(input);
-        setCountriesData(filtered);
+        setCountriesData(filtered); 
+    };
 
-     
+    const clearInput = async () => {
+        setInput('');
+        const resetted = defaultCountriesData;
+        setCountriesData(resetted);
     };
 
     const card = <Grid>
@@ -85,7 +90,7 @@ const Countries = () => {
     return (
         <Container>
             <Options>          
-                <Search input={input} onChange={updateInput} /> 
+                <Search input={input} onChange={updateInput} onClick={clearInput}/> 
                 <Filter filterByRegion={loadCountriesByRegion} />
             </Options> 
              { loading ? <Spinner /> : card }            

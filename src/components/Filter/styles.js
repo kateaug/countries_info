@@ -2,11 +2,19 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     display: flex;
-    flex: .2;
+    flex: 1;
     align-items: center;
     justify-content: center; 
     position: relative;
     display: inline-block;
+
+    @media (min-width: 600px) {
+        flex: .4;
+    }
+
+    @media (min-width: 1200px) {
+        flex: .2;
+    }
 
     button {
         display: flex;
