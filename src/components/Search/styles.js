@@ -1,51 +1,36 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    display: grid;
-    grid-template-columns: 1.5rem 4fr 1fr;
-    width:300px;
-    background-color: white;
-    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    width: 350px;
+    background-color: ${({theme}) => theme.elements};
+    color: ${({ theme }) => theme.text};
+    border: none;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+    box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.03);
 
     svg {
+        position: absolute;
+        color: ${({ theme }) => theme.text};
         padding: 15px;
-        grid-row: 1;
-        grid-column: 1/2;
-        z-index: 2;
-        color: gray;
-
-
-     /// TODO NOT WORKING!!!!!!!
-        &:focus-within ~ & {
-            display: none;
-        }
-
-           
-
-    }
-
-    
-
-    
+    }     
 `;
 
 export const Input = styled.input`
+    background-color: ${({theme}) => theme.elements};
+    color: ${({ theme }) => theme.text};
     border: 0;
-    padding: 15px;
-    grid-column: 2/4;
-    grid-row: 1;
-    outline :none;
+    padding: 15px 15px 15px 40px;
+    border-radius: 4px;
+    width: 100%; 
+    outline: none;
+    background-color: ${({theme}) => theme.elements}; 
     
     &:focus-within {
-        grid-column: 1/4;
-
         &::placeholder {
            color: transparent;
         }
     } 
-    
-    
 `;

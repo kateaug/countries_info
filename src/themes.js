@@ -1,18 +1,25 @@
-const black = '#363537';
-const grey = '#E2E2E2';
-const white = '#FFFFFF';
+const black = '#292929';
+const lightGrey = '#fcfcfc';
+const midGrey = '#f7f7f7';
+const grey = '#525252';
+const charcoal = '#383838';
+const white = '#ffffff';
+
 
 
 export const light = {
   name: 'light',
   text: black,
-  background: grey,
-  elements: white
+  background: midGrey,
+  elements: white,
+  hover: lightGrey
+
 };
 
 export const dark = {
   name: 'dark',
   text: white,
   background: black,
-  elements: black
+  elements: charcoal,
+  hover: grey
 };

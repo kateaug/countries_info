@@ -8,7 +8,7 @@ const Search = ({input: keyword, onChange: setKeyword }) => {
     
     return (
         <Container>
-            <FontAwesomeIcon focusable='true' icon={faSearch} size='xs' />
+             <FontAwesomeIcon icon={faSearch} size='xs'  />
              <Input
               type="text" 
               placeholder="Search for a country..." 

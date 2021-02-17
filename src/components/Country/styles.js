@@ -8,6 +8,7 @@ export const Container = styled.div`
     border-radius: 5px;
     max-width: 250px;
     cursor: pointer;
+    box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.03);
     color: ${({ theme }) => theme.text};
 
     img {

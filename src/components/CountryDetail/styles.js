@@ -22,16 +22,23 @@ export const Flag = styled.div`
         display: flex;
         justify-content: space-around;
         align-items: center;
-        background-color: #fff;
-        border: 1px solid #ccc;
+        background-color: ${({theme}) => theme.elements};
+        color: ${({ theme }) => theme.text};
+        border: none;
         overflow: hidden;
         outline: none;
         cursor: pointer;
-        box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+        box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.03);
         padding: 10px;
         width: 17%;
-        font-weight: bold;
+        font-size: 15px;
         border-radius: 4px;
+        transition: all 0.3s ease 0s;
+
+        &:hover {
+            background: ${({ theme }) => theme.hover};
+            
+        }
 
    }
 
@@ -42,6 +49,7 @@ export const Details = styled.div`
    flex: 1;
    flex-direction: column;  
    padding: 50px;
+   margin-top: 30px;
 
     
 `;
@@ -77,15 +85,21 @@ export const Borders = styled.div`
         flex-wrap: wrap;
    
         a {
-            padding: 5px;
-            font-size: 20px;
+            padding: 10px;
+            font-size: 17px;
             border-radius: 5px;
             margin: 5px 5px 5px 0;
-            background: white;
-            color: black;
+            background: ${({theme}) => theme.elements};
+            color: ${({ theme }) => theme.text};
             text-decoration: none;
             cursor: pointer;
             box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease 0s;
+
+            &:hover {
+                background: ${({ theme }) => theme.hover};
+                
+            }
         }
     }        
                 
