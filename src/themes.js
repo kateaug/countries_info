@@ -1,6 +1,6 @@
 const black = '#292929';
 const lightGrey = '#fcfcfc';
-const midGrey = '#f7f7f7';
+const midGrey = '#f2f2f2';
 const grey = '#525252';
 const charcoal = '#383838';
 const white = '#ffffff';

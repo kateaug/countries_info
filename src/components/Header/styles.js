@@ -4,9 +4,14 @@ export const Container = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px 35px;
+    padding: 20px 30px;
+   
     background: ${({ theme }) => theme.elements};
     box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.03);
+
+    @media (min-width: 1200px) {
+        padding: 30px 100px;
+    }
 
     h1 {
         font-size: 20px;

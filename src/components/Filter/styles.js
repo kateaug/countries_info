@@ -29,7 +29,7 @@ export const Container = styled.div`
         cursor: pointer;
         box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.03);
         width: 100%;
-        padding: 15px 30px;
+        padding: 15px;
     }
 `;
 
@@ -40,6 +40,7 @@ export const FilterList = styled.ul`
         border: none;
         position: absolute;
         box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.03);
+        margin-top: 1px;
 
         button {
             display: flex;
@@ -52,7 +53,7 @@ export const FilterList = styled.ul`
             outline: none;
             cursor: pointer;
             width: 100%;
-            padding: 15px 30px;
+            padding: 15px;
             border-radius: 0;
             transition: all 0.3s ease 0s;    
 

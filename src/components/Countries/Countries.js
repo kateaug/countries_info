@@ -67,8 +67,7 @@ const Countries = () => {
                             ) : (countriesData.map((data, index, name ) => (
                             <Link 
                                 to={`/${data.name.toLowerCase()}`} 
-                                key={data.name}
-                                style={{ textDecoration: 'none' }}>    
+                                key={data.name}>    
                                     <Country
                                         onClick={() =>
                                             history.push({

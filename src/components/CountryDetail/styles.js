@@ -2,20 +2,43 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
    display: flex;
-   padding: 30px 50px;
+   justify-content: center;
+   padding: 50px;
    color: ${({ theme }) => theme.text};
+   flex-wrap: wrap;
+
+        @media (min-width: 600px) { 
+            flex-wrap: no-wrap;
+            
+        } 
+
+        @media (min-width: 1200px) { 
+          padding: 30px 100px;
+          justify-content: space-between;
+
+        }  
 `;
 
 export const Flag = styled.div`
    display: flex;
-   flex: 1;
    flex-direction: column;
-   padding: 20px 50px;
+
+   @media (min-width: 1200px) { 
+       flex: 1;  
+   }
    
    img {
         margin-top: 30px;
-        object-fit: contain;
-        width: 100%;
+        flex: 1;
+        object-fit: cover;
+        
+
+        @media (min-width: 1200px) { 
+            max-width: 100%; 
+            object-fit: cover;
+            width: 550px;
+            height: 350px;
+        } 
    }
 
    button {
@@ -30,8 +53,8 @@ export const Flag = styled.div`
         cursor: pointer;
         box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.03);
         padding: 10px;
-        width: 17%;
-        font-size: 15px;
+        width: 32%;
+        font-size: 12px;
         border-radius: 4px;
         transition: all 0.3s ease 0s;
 
@@ -39,6 +62,16 @@ export const Flag = styled.div`
             background: ${({ theme }) => theme.hover};
             
         }
+
+        @media (min-width: 600px) { 
+            width: 13%;
+            font-size: 15px;
+        }
+
+        @media (min-width: 1200px) { 
+            width: 17%;
+        } 
+
 
    }
 
@@ -48,19 +81,34 @@ export const Details = styled.div`
    display: flex;
    flex: 1;
    flex-direction: column;  
-   padding: 50px;
+   padding: 0;
    margin-top: 30px;
+
+
+   @media (min-width: 600px) { 
+     padding: 50px;   
+     font-size: 25px;
+   }
+
+   @media (min-width: 1200px) { 
+      padding: 30px 10px; 
+      font-size: 17px;
+   }   
 
     
 `;
 
 export const CountryInfo = styled.div`
-    margin-top: 50px;
+    margin-top: 10px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
     column-gap: 10px;
     row-gap: 10px;
+
+    @media (min-width: 600px) { 
+        margin-top: 40px;   
+    }
 
     strong {
         margin-right: 5px;
@@ -69,9 +117,13 @@ export const CountryInfo = styled.div`
 `;
 
 export const Borders = styled.div`
-    margin-top: 50px;
+    margin-top: 40px;
     display: flex;
     flex-flow: row wrap;
+
+    @media (min-width: 600px) { 
+        margin-top: 50px;   
+    }
   
 
     strong {
