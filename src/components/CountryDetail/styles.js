@@ -29,13 +29,26 @@ export const Flag = styled.div`
    
    img {
         margin-top: 30px;
-        flex: 1;
         object-fit: cover;
+        max-width: 100%;
+        width: 350px;
+        height: 180px;
+        
+
+        @media (min-width: 600px) { 
+            width: 720px;
+            height: 420px;
+            
+        }
+
+        @media (min-width: 1024px) { 
+            width: 850px;
+            height: 600px;
+            
+        }
         
 
         @media (min-width: 1200px) { 
-            max-width: 100%; 
-            object-fit: cover;
             width: 550px;
             height: 350px;
         } 
