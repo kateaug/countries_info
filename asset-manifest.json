@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/countries_info/static/css/main.c62616ca.chunk.css",
-    "main.js": "/countries_info/static/js/main.38b72ea6.chunk.js",
-    "main.js.map": "/countries_info/static/js/main.38b72ea6.chunk.js.map",
-    "runtime-main.js": "/countries_info/static/js/runtime-main.b5b35853.js",
-    "runtime-main.js.map": "/countries_info/static/js/runtime-main.b5b35853.js.map",
-    "static/js/2.49b25218.chunk.js": "/countries_info/static/js/2.49b25218.chunk.js",
-    "static/js/2.49b25218.chunk.js.map": "/countries_info/static/js/2.49b25218.chunk.js.map",
-    "index.html": "/countries_info/index.html",
-    "static/css/main.c62616ca.chunk.css.map": "/countries_info/static/css/main.c62616ca.chunk.css.map",
-    "static/js/2.49b25218.chunk.js.LICENSE.txt": "/countries_info/static/js/2.49b25218.chunk.js.LICENSE.txt"
+    "main.css": "/where-in-the-world/static/css/main.c62616ca.chunk.css",
+    "main.js": "/where-in-the-world/static/js/main.38b72ea6.chunk.js",
+    "main.js.map": "/where-in-the-world/static/js/main.38b72ea6.chunk.js.map",
+    "runtime-main.js": "/where-in-the-world/static/js/runtime-main.f49b49a8.js",
+    "runtime-main.js.map": "/where-in-the-world/static/js/runtime-main.f49b49a8.js.map",
+    "static/js/2.ee06430a.chunk.js": "/where-in-the-world/static/js/2.ee06430a.chunk.js",
+    "static/js/2.ee06430a.chunk.js.map": "/where-in-the-world/static/js/2.ee06430a.chunk.js.map",
+    "index.html": "/where-in-the-world/index.html",
+    "static/css/main.c62616ca.chunk.css.map": "/where-in-the-world/static/css/main.c62616ca.chunk.css.map",
+    "static/js/2.ee06430a.chunk.js.LICENSE.txt": "/where-in-the-world/static/js/2.ee06430a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b5b35853.js",
-    "static/js/2.49b25218.chunk.js",
+    "static/js/runtime-main.f49b49a8.js",
+    "static/js/2.ee06430a.chunk.js",
     "static/css/main.c62616ca.chunk.css",
     "static/js/main.38b72ea6.chunk.js"
   ]
