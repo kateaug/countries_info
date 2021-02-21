@@ -30,8 +30,8 @@ function App() {
           <BrowserRouter>
           <Header toggleThemes={toggleTheme}/> 
               <Switch>
-                  <Route exact path='/' component={Countries} />        
-                  <Route path='/:name' component={CountryDetail} />               
+                  <Route exact path='/countries_info' component={Countries} />        
+                  <Route path='/:name' component={CountryDetail} />
               </Switch>
           </BrowserRouter>
       </ThemeProvider>
