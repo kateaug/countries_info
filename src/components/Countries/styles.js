@@ -20,24 +20,23 @@ export const Options = styled.div`
 `;
 
 
-export const Grid = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+export const Grid = styled.div`  
+    display: grid;
+    grid-column: 1;
+    grid-gap: 30px;
     padding: 30px;
 
-    @media (min-width: 600px) {
-        justify-content: space-between;
+    @media (min-width: 600px) {    
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 769px) {    
+        grid-template-columns: repeat(4, 1fr);
     }
 
     @media (min-width: 1200px) {
         padding: 30px 100px;
     }
   
-    a {
-        text-decoration: none;
-        margin-bottom: 30px;        
-    }
-
 `;
    

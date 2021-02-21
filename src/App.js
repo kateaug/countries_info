@@ -31,7 +31,7 @@ function App() {
           <Header toggleThemes={toggleTheme}/> 
               <Switch>
                   <Route exact path='/countries_info' component={Countries} />        
-                  <Route path='/:name' component={CountryDetail} />
+                  <Route path='/:alpha3Code' component={CountryDetail} />
               </Switch>
           </BrowserRouter>
       </ThemeProvider>

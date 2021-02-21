@@ -8,7 +8,7 @@ const Country = ({ country}) => {
 
     return (    
         <Container>
-            <Link to={country.name}>
+            <Link to={country.alpha3Code}>
                 <img src={country.flag} className="country__flag" alt='flag' />   
                 <Details>
                     <h3>{country.name}</h3>

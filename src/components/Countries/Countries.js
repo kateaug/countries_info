@@ -20,7 +20,6 @@ const Countries = () => {
           .then(data => {
             setLoading(false);  
             setCountriesData(data);
-            console.log(data[1]);
             setDefaultCountriesData(data);
             setInput('');
           })            
@@ -64,7 +63,8 @@ const Countries = () => {
     const card = <Grid>
                         {!countriesData ? (
                                 <div>Something went wrong... Try again!</div>
-                            ) : (countriesData.map((country) => (
+                            ) : (
+                                countriesData.map((country) => (
                                 <Country key={country.alpha3Code} country={country}/>
                                                      
                         )))}

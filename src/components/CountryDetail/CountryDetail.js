@@ -10,48 +10,30 @@ const CountryDetail = () => {
     const [country, setCountry] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const { name } = useParams();
+    const { alpha3Code } = useParams();
 
     const loadCountry = async () => {
-        if (name.length < 4) {
-            return await fetch(`https://restcountries.eu/rest/v2/alpha/${name}`)
+
+        return await fetch(`https://restcountries.eu/rest/v2/alpha/${alpha3Code}`)
             .then(res => res.json())
             .then(data => {
                 setLoading(false);
                 setCountry(data);
-                console.log('DETAIL >>>>', data);
             })
-            .catch(err => console.log(err))
-
-        } else {
-            return await fetch(`https://restcountries.eu/rest/v2/name/${name}`)
-            .then(res => res.json())
-            .then(data => {
-                setLoading(false);
-                setCountry(data[0]);
-                console.log('DETAIL >>>>', data);
-            })
-            .catch(err => console.log(err))
-        }
-        
+            .catch(err => console.log(err))        
         
     };
 
     useEffect(() => {
         loadCountry();
 
-    }, []);
-
-    useEffect(() => {
-        loadCountry();
-
-    }, [name]);
+    }, [alpha3Code]);
 
 
     return (loading ? <Spinner /> : (
             <Container>
                 <Flag>
-                    <Link to='/' style={{ textDecoration: 'none' }}>
+                    <Link to='countries_info' style={{ textDecoration: 'none' }}>
                         <button type='button'>
                             <FontAwesomeIcon icon={faArrowLeft} />
                             Back
@@ -76,7 +58,7 @@ const CountryDetail = () => {
                              <strong>Border Countries:</strong>
                              <div>
                                 { country?.borders.map(border => (
-                                    <Link to={'/' + border} key={border}>
+                                    <Link to={border} key={border}>
                                         {border}        
                                     </Link>                             
                                 ))}

@@ -15,7 +15,7 @@ const Header = ( {toggleThemes} ) => {
   return (
     
      <Container>
-            <Link to="countries_info" style={{ textDecoration: 'none' }}>
+            <Link to='countries_info' style={{ textDecoration: 'none' }}>
                 <h1>Where in the world?</h1>
             </Link>
             <button onClick={toggleThemes}>

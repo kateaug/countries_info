@@ -19,8 +19,13 @@ export const Container = styled.div`
         max-width: 285px;
     }
 
+    a {
+        text-decoration: none;
+        color: ${({ theme }) => theme.text};
+    }
+
     img {
-        max-width: 100%; 
+        width: 100%;
         object-fit: cover;
         flex: 1;
 
