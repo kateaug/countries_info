@@ -33,7 +33,7 @@ const CountryDetail = () => {
     return (loading ? <Spinner /> : (
             <Container>
                 <Flag>
-                    <Link to='countries_info' style={{ textDecoration: 'none' }}>
+                    <Link to='/' style={{ textDecoration: 'none' }}>
                         <button type='button'>
                             <FontAwesomeIcon icon={faArrowLeft} />
                             Back
