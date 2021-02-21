@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route
 } from 'react-router-dom';
@@ -27,17 +27,13 @@ function App() {
   return (
       <ThemeProvider theme={isDarkMode ? dark : light}>
           <GlobalStyles />
-          <Router>
+          <BrowserRouter>
           <Header toggleThemes={toggleTheme}/> 
               <Switch>
-                  <Route exact path='/'>        
-                      <Countries />
-                  </Route>
-                  <Route path='/:name'>               
-                      <CountryDetail />
-                  </Route>
+                  <Route exact path='/' component={Countries} />        
+                  <Route path='/:name' component={CountryDetail} />               
               </Switch>
-          </Router>
+          </BrowserRouter>
       </ThemeProvider>
   );
 }

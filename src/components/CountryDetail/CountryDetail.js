@@ -9,27 +9,31 @@ import Spinner from '../Spinner/Spinner';
 const CountryDetail = () => {
     const [country, setCountry] = useState([]);
     const [loading, setLoading] = useState(true);
+
     const { name } = useParams();
 
     const loadCountry = async () => {
-
         if (name.length < 4) {
             return await fetch(`https://restcountries.eu/rest/v2/alpha/${name}`)
             .then(res => res.json())
             .then(data => {
                 setLoading(false);
                 setCountry(data);
+                console.log('DETAIL >>>>', data);
             })
             .catch(err => console.log(err))
+
         } else {
             return await fetch(`https://restcountries.eu/rest/v2/name/${name}`)
             .then(res => res.json())
             .then(data => {
                 setLoading(false);
                 setCountry(data[0]);
+                console.log('DETAIL >>>>', data);
             })
             .catch(err => console.log(err))
         }
+        
         
     };
 
@@ -53,32 +57,32 @@ const CountryDetail = () => {
                             Back
                         </button>
                     </Link>
-                    <img src={country.flag} alt='flag' />
+                    <img src={country?.flag} alt='flag'/>
                 </Flag>
                 <Details>
-                    <h3><strong>{country.name}</strong></h3>
+                    <h3><strong>{country?.name}</strong></h3>
                     <CountryInfo>
-                        <span><strong>Native Name: </strong>{country.nativeName}</span>
-                        <span><strong>Capital: </strong>{country.capital}</span>
-                        <span><strong>Region: </strong>{country.region}</span>
-                        <span><strong>Subregion: </strong>{country.subregion}</span>
-                        <span><strong>Population: </strong>{country.population}</span>
-                        <span><strong>Top Level Domain: </strong>{country.topLevelDomain}</span>
-                        <span><strong>Languages: </strong>{country.languages?.map(lang => lang.name).join(', ')}</span>
-                        <span><strong>Currencies: </strong>{country.currencies?.map(({ symbol }) => symbol).join(', ')}</span>
+                        <span><strong>Native Name: </strong>{country?.nativeName}</span>
+                        <span><strong>Capital: </strong>{country?.capital}</span>
+                        <span><strong>Region: </strong>{country?.region}</span>
+                        <span><strong>Subregion: </strong>{country?.subregion}</span>
+                        <span><strong>Population: </strong>{country?.population}</span>
+                        <span><strong>Top Level Domain: </strong>{country?.topLevelDomain}</span>
+                        <span><strong>Languages: </strong>{country?.languages?.map(lang => lang.name).join(', ')}</span>
+                        <span><strong>Currencies: </strong>{country?.currencies?.map(({ symbol }) => symbol).join(', ')}</span>
                     </CountryInfo>
-                     { country.borders && country.borders.length > 0 ? (
+                     { country?.borders && country?.borders.length > 0 ? (
                         <Borders>
                              <strong>Border Countries:</strong>
                              <div>
-                                { country.borders.map(border => (
-                                    <Link to={border} key={border}>
+                                { country?.borders.map(border => (
+                                    <Link to={'/' + border} key={border}>
                                         {border}        
                                     </Link>                             
                                 ))}
                              </div>
                         </Borders> 
-                    ) : null }             
+                    ) : <div></div> }             
                 </Details>
             </Container>
     ));

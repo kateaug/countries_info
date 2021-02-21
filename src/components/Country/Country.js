@@ -1,19 +1,24 @@
 import React from 'react';
 import { Container, Details } from './styles';
+import { Link } from 'react-router-dom';
 
-const Country = ({ flag, alt, name, population, region, capital }) => {
+
+const Country = ({ country}) => {
     
 
-    return (
+    return (    
         <Container>
-            <img src={flag} className="country__flag" alt={alt} />   
-            <Details>
-                <h3>{name}</h3>
-                <span><strong>Population:</strong>{population}</span>
-                <span><strong>Region:</strong>{region}</span>
-                <span><strong>Capital:</strong>{capital}</span>
-            </Details>           
+            <Link to={country.name}>
+                <img src={country.flag} className="country__flag" alt='flag' />   
+                <Details>
+                    <h3>{country.name}</h3>
+                    <span><strong>Population:</strong>{country.population}</span>
+                    <span><strong>Region:</strong>{country.region}</span>
+                    <span><strong>Capital:</strong>{country.capital}</span>
+                </Details> 
+            </Link>          
         </Container>
+      
     );
 };
 
